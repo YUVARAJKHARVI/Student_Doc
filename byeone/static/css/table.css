@@ -1,0 +1,44 @@
+body {
+  background: #eee;
+  padding: 10px 60px;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+table {
+
+  margin: 40px 0;
+  font-size: 1rem;
+  color: #333;
+  font-weight: 700;
+  border: 1px solid #333;
+  background-color: #fff;
+  text-align: center;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+td,
+th {
+  padding: .5em;
+  height: 50px;
+  vertical-align: middle;
+  border-right: 1px solid #333;
+  border-bottom: 1px solid #333;
+
+
+}
+
+th {
+  background: #333;
+  color: white;
+}
+
+td {
+  background: #fff;
+}
+
+thead {
+  background-color: #333;
+}

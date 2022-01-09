@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <title>Admit Student</title>
+</head>
+
+<body>
+    <div class="d-flex justify-content-center">
+        <div class="form-body">
+            <div class="row">
+                <div class="form-holder">
+                    <div class="form-content ">
+                        <div class="form-items col-10">
+                            <h3>Register</h3>
+                            <p>Fill in the data below.</p>
+                            <form class="requires-validation" method="POST">
+                                {% csrf_token %}
+
+                                <div class="col-md-9">
+                                    <input class="form-control" type="text" name="name" placeholder="Full Name"
+                                        required>
+
+                                </div>
+
+                                <div class="col-md-9">
+                                    <input class="form-control" type="text" name="roll_no" placeholder="Roll Number"
+                                        required>
+                                    {% if messages %}
+                                    {% for messages in messages %}
+                                    <div>
+                                        <script>
+                                            alert('{{ messages }}');
+                                        </script>
+                                    </div>
+                                    {% endfor %}
+                                    {% endif %}
+                                </div>
+                                <div class="col-md-9">
+                                    <input class="form-control" type="text" name="class" placeholder="Class" required>
+
+                                </div>
+                                <div class="col-md-9 mb-3">
+                                    <input class="form-control" type="text" name="school" placeholder="School" required>
+
+                                </div>
+                                <div class="col-md-9">
+                                    <input class="form-control" type="number" name="mobile" placeholder="Mobile"
+                                        required>
+
+                                </div>
+                                <div class="col-md-9">
+                                    <input class="form-control" type="text" name="address" placeholder="Address"
+                                        required>
+
+                                </div>
+
+                                <div class="col-md-10">
+                                    <div class='row'>
+                                        <div class="col-4 mb-1">
+                                            <input class="form-control" type="number" name="Maths" placeholder="Maths"
+                                                required>
+
+                                        </div>
+                                        <div class="col-4 mb-1">
+                                            <input class="form-control" type="number" name="Physics"
+                                                placeholder="Physics" required>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-10">
+                                    <div class='row'>
+                                        <div class="col-4 mb-1">
+                                            <input class="form-control" type="number" name="Chemistry"
+                                                placeholder="Chemistry" required>
+
+                                        </div>
+                                        <div class="col-4 mb-1">
+                                            <input class="form-control" type="number" name="Biology"
+                                                placeholder="Biology" required>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-12 ml-5">
+                                    <div class='row'>
+                                        <div class="col-4 mb-1">
+                                            <input class="form-control" type="number" name="English"
+                                                placeholder="English" required>
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                                <div class="form-button mt-3 ">
+                                    <button id="submit" type="submit" class="btn btn-primary">Register</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

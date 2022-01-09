@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Academics</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/table.css' %}">
+</head>
+
+<body>
+
+    {% for Student in Students_data %}
+
+    <table class="table" style='width:40%;'>
+        <thead>
+            <tr>
+                <th colspan="2">{{Student.Students.Name|title}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Roll Number</td>
+                <td>{{Student.Students}}</td>
+            </tr>
+            <tr>
+                <td>Maths</td>
+                <td>{{Student.Maths}}</td>
+            </tr>
+            <tr>
+                <td>Physics</td>
+                <td>{{Student.Physics}}</td>
+            </tr>
+            <tr>
+                <td>Chemistry</td>
+                <td>{{Student.Chemistry}}</td>
+            </tr>
+            <tr>
+                <td>Biology</td>
+                <td>{{Student.Biology}}</td>
+            </tr>
+            <tr>
+                <td>English</td>
+                <td>{{Student.English}}</td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td>{{Student.English|add:Student.Biology|add:Student.Chemistry|add:Student.Physics|add:Student.Maths}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    {% endfor %}
+
+</body>
+
+</html>
+</body>
+
+</html>
